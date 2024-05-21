@@ -1,20 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return "Welcome to de home page";
-});
-
-
-
-Route::get('/posts', function () {
-    return "Welcome to de posts page";
-});
-
-Route::get("/posts/{id}/{category?}", function($id,$cateogory=null){
-    return "Welcome to de post $id page";
-});
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsController;
+Route::get('/',HomeController::class);
+Route::get('/posts',[PostsController::class,'index']);
+Route::get('/posts/create',[PostsController::class,'create']);
+Route::get("/posts/{id}", [PostsController::class,'show']);
 
 //con parametro opcional
 /*
