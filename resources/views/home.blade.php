@@ -17,6 +17,10 @@
     </x-alert>
 
     <h2>Hola mundo</h2>
+    <x-alert2>
+      componente alert2
+    </x-alert2>
+    <h2>Hola mundo</h2>
   </div>
 
 </body>
