@@ -7,15 +7,21 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     public function index(){
-        return "Welcome to de posts page";
+        return  view('posts.index');
     }
 
     public function create(){
-        return "Aqui se vera el formulario para crear un post";
+        return view('posts.create');
     }
 
     public function show($id){
-        return "Welcome to de post $id page";
+        // para enviar variables a la vista se puede hacer mediante un array
+      /*  return view('posts.show',[
+            'id' => $id
+        ]);
+    */
+    //o mediante la funcion compact
+    return view('posts.show',compact('id'));
     }
     
 }
